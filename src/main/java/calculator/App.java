@@ -7,7 +7,9 @@ public class App {
 
     public static void main(String[] args) {
         double[] resultArray = new double[10];
+        double[] newResultArray = new double[resultArray.length - 1];
         int index = 0;
+        int indexRemove = 0;
 
         Scanner sc = new Scanner(System.in);
 
@@ -42,14 +44,18 @@ public class App {
                 System.out.println("유효하지 않은 연산자 입니다.");
                 continue;
             }
+            System.out.println("결과: " + result);
 
             if (index < resultArray.length) {
                 resultArray[index] = result;
                 index++;
             }
 
-            System.out.println("결과: " + result);
-
+            for (int i = 0, j = 0; i < resultArray.length; i++) {
+                if (i != indexRemove) {
+                    newResultArray[j++] = resultArray[i];
+                }
+            }
 
             System.out.print("더 계산하시겠습니까? (exit 입력 시 종료) ");
             String exit = sc.next();

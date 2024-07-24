@@ -1,10 +1,14 @@
 package calculator;
 
+import java.util.Arrays;
 import java.util.Scanner;
 
 public class App {
 
     public static void main(String[] args) {
+        double[] resultArray = new double[10];
+        int index = 0;
+
         Scanner sc = new Scanner(System.in);
 
         while (true) {
@@ -36,18 +40,23 @@ public class App {
 
             } else {
                 System.out.println("유효하지 않은 연산자 입니다.");
+                continue;
+            }
+
+            if (index < resultArray.length) {
+                resultArray[index] = result;
+                index++;
             }
 
             System.out.println("결과: " + result);
+
 
             System.out.print("더 계산하시겠습니까? (exit 입력 시 종료) ");
             String exit = sc.next();
             if (exit.equals("exit")) {
                 break;
-            } else if (!exit.equals("exit")) {
-                System.out.println("유효하지 않은 입력입니다.");
-                break;
-            } else {}
+            }
         }
+        System.out.println("배열 저장확인: " + Arrays.toString(resultArray));
     }
 }

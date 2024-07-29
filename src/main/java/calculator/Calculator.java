@@ -3,19 +3,24 @@ package calculator;
 import java.util.ArrayList;
 
 public class Calculator {
-    ArrayList<Double> resultArray = new ArrayList<>();
+    public ArrayList<Double> resultArray;
+    public Calculator() {
+        resultArray = new ArrayList<>();
+    }
 
-    public double calculate(String oper, int num1, int num2) throws CalException{
+
+    // 계산기 메소드
+    public double calculate(char oper, int num1, int num2) throws CalException{
 
         double result = 0;
 
-        if (oper.equals("+")) {
+        if (oper == '+') {
             result = num1 + num2;
-        } else if (oper.equals("-")) {
+        } else if (oper == '-') {
             result = num1 - num2;
-        } else if (oper.equals("*")) {
+        } else if (oper == '*') {
             result = num1 * num2;
-        } else if (oper.equals("/")) {
+        } else if (oper == '/') {
             result = num1 / num2;
             if (num2 == 0) {
                 throw new CalException();
@@ -23,9 +28,7 @@ public class Calculator {
         } else {
             throw new CalException();
         }
-
         resultArray.add(result);
-
         return result;
     }
 }

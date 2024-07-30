@@ -5,15 +5,13 @@ import java.util.ArrayList;
 public class Calculator {
     private ArrayList<Double> resultArray;
     private double result;
-    public Calculator() {
-        resultArray = new ArrayList<>();
+    public Calculator(ArrayList<Double> resultArray) {
+        this.resultArray = resultArray;
     }
     // 계산기 메소드
     public double calculate(char oper, int num1, int num2) throws CalException{
 
-        if (num2 == 0) {
-            throw new CalException();
-        }
+
 
         if (oper == '+') {
             result = num1 + num2;
@@ -23,6 +21,9 @@ public class Calculator {
             result = num1 * num2;
         } else if (oper == '/') {
             result = num1 / num2;
+            if (num2 == 0) {
+                throw new CalException();
+            }
         } else {
             throw new CalException();
         }

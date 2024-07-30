@@ -11,6 +11,10 @@ public class Calculator {
     // 계산기 메소드
     public double calculate(char oper, int num1, int num2) throws CalException{
 
+        if (num2 == 0) {
+            throw new CalException();
+        }
+
         if (oper == '+') {
             result = num1 + num2;
         } else if (oper == '-') {
@@ -19,9 +23,6 @@ public class Calculator {
             result = num1 * num2;
         } else if (oper == '/') {
             result = num1 / num2;
-            if (num2 == 0) {
-                throw new CalException();
-            }
         } else {
             throw new CalException();
         }
@@ -29,21 +30,30 @@ public class Calculator {
         return result;
     }
 
-    // getter, setter 메소드
+    // getter 메소드
     public double getResult() {
         return result;
     }
+    // setter 메소드
     public void setResult(double result) {
         this.result = result;
     }
 
-    public ArrayList<Double> getResultArray() {
-        return resultArray;
-    }
+//    값 확인
+//    public ArrayList<Double> getResultArray() {
+//        return resultArray;
+//    }
 
+    //삭제 메소드
     public void removeResult(String remove) {
         if (remove.equals("remove")) {
             resultArray.remove(0);
+        }
+    }
+
+    public void inquiryResults(String inquiry) {
+        if (inquiry.equals("inquiry")) {
+            System.out.println(resultArray);
         }
     }
 }

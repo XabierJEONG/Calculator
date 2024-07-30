@@ -25,9 +25,7 @@ public class App {
                 System.out.println("에러 : " + e.getMessage());
             }
 
-            //삭제확인용1
-            System.out.println("현재까지 계산된 값들" + calculator.getResultArray());
-
+//            //set 메소드
 //            calculator.setResult(3);
 //            System.out.println(calculator.getResult());
 
@@ -36,17 +34,11 @@ public class App {
             String remove = sc.next();
             calculator.removeResult(remove);
 
-            //삭제확인용2
-            System.out.println("현재까지 계산된 값들" + calculator.getResultArray());
 
-//            //연산결과 조회.
-//            System.out.print("저장된 연산결과를 조회하시겠습니까? (inquiry 입력 시 조회) ");
-//            String inquiry = sc.next();
-//            if (inquiry.equals("inquiry")) {
-//                for (double resultArrays: resultArray) {
-//                    System.out.println(resultArrays);
-//                }
-//            }
+            //연산결과 조회.
+            System.out.print("저장된 연산결과를 조회하시겠습니까? (inquiry 입력 시 조회) ");
+            String inquiry = sc.next();
+            calculator.inquiryResults(inquiry);
 
             // 추가 계산여부.
             System.out.print("더 계산하시겠습니까? (exit 입력 시 종료) ");

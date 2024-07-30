@@ -8,6 +8,8 @@ public class Calculator {
     protected ArrayList<Double> pieResultArray;
     protected double result;
     protected double pieResult;
+
+
     final double PI = 3.14; // 원주율은 변하지 않는 상수이기에 fianl 사용.
 
     // 생성자

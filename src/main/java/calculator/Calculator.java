@@ -3,16 +3,13 @@ package calculator;
 import java.util.ArrayList;
 
 public class Calculator {
-    public ArrayList<Double> resultArray;
+    private ArrayList<Double> resultArray;
+    private double result;
     public Calculator() {
         resultArray = new ArrayList<>();
     }
-
-
     // 계산기 메소드
     public double calculate(char oper, int num1, int num2) throws CalException{
-
-        double result = 0;
 
         if (oper == '+') {
             result = num1 + num2;
@@ -30,5 +27,13 @@ public class Calculator {
         }
         resultArray.add(result);
         return result;
+    }
+
+    // getter, setter 메소드
+    public double getResult() {
+        return result;
+    }
+    public void setResult(double result) {
+        this.result = result;
     }
 }

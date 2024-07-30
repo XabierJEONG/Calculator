@@ -20,10 +20,13 @@ public class App {
 
             try {
                 double result = calculator.calculate(oper, num1, num2);
-                System.out.println("결과 : " + result);
+                System.out.println("결과 : " + calculator.getResult());
             } catch (CalException e) {
                 System.out.println("에러 : " + e.getMessage());
             }
+
+            calculator.setResult(3);
+            System.out.println(calculator.getResult());
 
 
             // 연산결과 삭제여부.
@@ -47,8 +50,8 @@ public class App {
             String exit = sc.next();
             if (exit.equals("exit")) {
                 break;
+
             }
-        }
-        sc.close();
+        } sc.close();
     }
 }

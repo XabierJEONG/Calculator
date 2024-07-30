@@ -2,8 +2,6 @@ package calculator;
 
 public class CircleCalculator extends Calculator {
 
-
-
     // 생성자
     public CircleCalculator() {
         super();
@@ -17,5 +15,4 @@ public class CircleCalculator extends Calculator {
         pieResultArray.add(pieResult);
         return pieResult;
     }
-
 }

@@ -24,5 +24,4 @@ public class ArithmeticCalculator extends Calculator {
         resultArray.add(result);
         return result;
     }
-
 }

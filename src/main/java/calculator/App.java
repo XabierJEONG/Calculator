@@ -25,17 +25,20 @@ public class App {
                 System.out.println("에러 : " + e.getMessage());
             }
 
-            calculator.setResult(3);
-            System.out.println(calculator.getResult());
+            //삭제확인용1
+            System.out.println("현재까지 계산된 값들" + calculator.getResultArray());
 
+//            calculator.setResult(3);
+//            System.out.println(calculator.getResult());
 
             // 연산결과 삭제여부.
-//            System.out.print("가장 먼저 저장된 연산결과를 삭제하시겠습니까? (remove 입력) ");
-//            String remove = sc.next();
-//            if (remove.equals("remove")) {
-//                resultArray.remove(0);
-//            }
-//
+            System.out.print("가장 먼저 저장된 연산결과를 삭제하시겠습니까? (remove 입력) ");
+            String remove = sc.next();
+            calculator.removeResult(remove);
+
+            //삭제확인용2
+            System.out.println("현재까지 계산된 값들" + calculator.getResultArray());
+
 //            //연산결과 조회.
 //            System.out.print("저장된 연산결과를 조회하시겠습니까? (inquiry 입력 시 조회) ");
 //            String inquiry = sc.next();

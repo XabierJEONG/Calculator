@@ -36,4 +36,14 @@ public class Calculator {
     public void setResult(double result) {
         this.result = result;
     }
+
+    public ArrayList<Double> getResultArray() {
+        return resultArray;
+    }
+
+    public void removeResult(String remove) {
+        if (remove.equals("remove")) {
+            resultArray.remove(0);
+        }
+    }
 }

@@ -5,25 +5,16 @@ import java.util.ArrayList;
 public class Calculator {
 
     // 필드
-    private ArrayList<Double> resultArray;
-    private ArrayList<Double> pieResultArray;
-    private double result;
-    private double pieResult;
+    public ArrayList<Double> resultArray;
+    public ArrayList<Double> pieResultArray;
+    public double result;
+    public double pieResult;
     final double PI = 3.14; // 원주율은 변하지 않는 상수이기에 fianl 사용.
 
     // 생성자
-    public Calculator(ArrayList<Double> resultArray, ArrayList<Double> pieResultArray) {
+    public Calculator() {
         this.resultArray = resultArray;
         this.pieResultArray = pieResultArray;
-    }
-
-    // 원 넓이 계산기 메소드
-    public double pieCalculate(int radNum1) throws CalException {
-        if (radNum1 != 0) {
-            pieResult = radNum1 * radNum1 * PI;
-        }
-        pieResultArray.add(pieResult);
-        return pieResult;
     }
 
     // 원 넓이 getter 메소드
@@ -47,27 +38,6 @@ public class Calculator {
         }
     }
 
-
-    // 사칙연산계산기 메소드
-    public double calculate(char oper, int num1, int num2) throws CalException {
-        if (oper == '+') {
-            result = num1 + num2;
-        } else if (oper == '-') {
-            result = num1 - num2;
-        } else if (oper == '*') {
-            result = num1 * num2;
-        } else if (oper == '/') {
-            result = num1 / num2;
-            if (num2 == 0) {
-                throw new CalException();
-            }
-        } else {
-            throw new CalException();
-        }
-        resultArray.add(result);
-        return result;
-    }
-
     // 사칙연산 getter 메소드
     public double getResult() {
         return result;
@@ -88,4 +58,6 @@ public class Calculator {
             System.out.println(resultArray);
         }
     }
+
+
 }

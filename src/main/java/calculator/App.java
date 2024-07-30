@@ -6,9 +6,9 @@ import java.util.Scanner;
 public class App {
 
     public static void main(String[] args) {
-        ArrayList<Double> resultArray = new ArrayList<>();
-        ArrayList<Double> pieResultArray = new ArrayList<>();
-        Calculator calculator = new Calculator(resultArray, pieResultArray);
+        Calculator calculator = new Calculator();
+        ArithmeticCalculator arithmeticCalculator = new ArithmeticCalculator();
+        CircleCalculator circleCalculator = new CircleCalculator();
         Scanner sc = new Scanner(System.in);
 
         // 숫자, 연산자 입력
@@ -27,7 +27,7 @@ public class App {
                 char oper = sc.next().charAt(0);
 
                 try {
-                    double result = calculator.calculate(oper, num1, num2);
+                    double result = arithmeticCalculator.calculate(oper, num1, num2);
                     System.out.println("결과 : " + calculator.getResult());
                 } catch (CalException e) {
                     System.out.println("에러 : " + e.getMessage());
@@ -54,7 +54,7 @@ public class App {
                 System.out.print("원의 반지름을 입력하세요: ");
                 int radNum1 = sc.nextInt();
                 try {
-                    double pieResult = calculator.pieCalculate(radNum1);
+                    double pieResult = circleCalculator.pieCalculate(radNum1);
                     System.out.println("결과 : " + calculator.getPieResult());
                 } catch (CalException e) {
                     System.out.println("에러: " + e.getMessage() + "0은 입력할 수 없습니다");
